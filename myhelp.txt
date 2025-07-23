@@ -1,0 +1,38 @@
+#!/bin/bash 
+# Myhelp command1 command2 command3 ...
+
+	if [ $# -eq 0  ] 
+	then 
+		echo no argument are enter
+		echo  
+		echo The Muanal help for the all six commands :" myfinger, mywhich, mycp, mydel, myhelp, myexit" 
+	fi 
+while [ $# -ne 0 ] 
+do 
+	if [ "$1" == "myfinger" ] 
+	then 
+		echo [ $1 ] This command will display the login name, full name, homw directory, and the default shell for each of the names given on the command line. 
+	elif [ "$1" == "mywhich" ] 
+	then 
+		echo [ $1 ] This command will check each directory listed in users PATH variable for each of the commands given as arguments, the display the full path of each command file found in the PATH. 
+	elif [ "$1" == "mycp" ] 
+	then 
+		echo [ $1 ] This command only copies a given source file name to a given destination file name. 
+
+	elif [ "$1" == "mydel" ] 
+	then 
+		echo [ $1 ] This command deletes any files or directorys given as arguments. 
+
+	elif [ "$1" == "myhelp" ] 
+	then 
+		echo [ $1 ] This command displays one of help/usage for any of the six command "myfinger, mywhich, mycp, mydel, myhelp, myexit" which can be passed as arguments.
+
+	elif [ "$1" == "myexit" ] 
+	then 
+		echo [ $1 ] This command lets the users exit the shell script mysh and return to their orginal shell.
+	else 
+		echo [ $1 ] This command not found 
+
+		fi
+	shift 
+done

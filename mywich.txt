@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]
+then 
+	echo Error message no argument 
+	exit 0 
+fi 
+
+ 
+mywhich=$(echo $PATH | tr ':' ' ' )
+
+	for MYWHICH in $mywhich
+	do 
+		if [ -s $MYWHICH/$1 ]
+		then 	
+			w=$(echo $MYWHICH )  
+			echo $MYWHICH/$1
+			echo $w/$1
+			exit 0 
+	fi 
+done 
+
+	echo [ $1 ] This command is no such thing. 

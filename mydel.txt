@@ -1,0 +1,25 @@
+#!/bin/bash 
+
+if [ $# -eq 0 ] 
+then
+	echo No argument  
+	echo Manual of delete script 
+	exit 2 
+fi 
+
+while [ $# -ne 0 ] 
+do 
+	if [ -f $1 ] 
+	then 	
+		rm -rf $1
+		echo [ $1 ] file is deleted.
+	elif [ -d $1 ] 
+	then 
+		rm -rf $1 
+		echo [ $1 ] directory is deleted. 
+	else 
+		echo [ $1 ] file does not exit.
+	fi 
+	shift 
+done 
+exit 0 

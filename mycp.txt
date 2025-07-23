@@ -1,0 +1,21 @@
+#!/bin/bash 
+
+if [ -f $1 ] 
+then 
+	ln -s $1 $2
+	echo Success: File [ $1 ] copied to file [ $2 ] 
+	exit 0 
+		elif [ -d $1 ] 
+		then 
+			ln -s $1 $2
+			echo Success: File [ $1 ] copied to file [ $2 ] 
+			exit 0 
+	else 
+		echo Error: [ $1 ] does not exit.
+	fi
+ 
+if [ $# -ne 2 ] 
+then 
+	echo Maual of copy script
+	exit 0 
+fi 

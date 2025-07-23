@@ -1,0 +1,39 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]
+then
+	 
+	USER_NAME=$(cat prj2_passwd | cut -d: -f1) #the user name is number
+	NAME=$(cat prj2_passwd | cut -d: -f5 | tr '_' ' ' ) # the full name 
+	HOME=$(cat prj2_passwd | cut -d: -f6 ) # the home 
+	DEFAULT=$(cat rpj2_passwd | cut -d: -f7 ) # thedefault shell 
+ 
+ 	for x in [ $# -ne 0 ] 	
+	do
+	echo login Name: $USER_NAME
+	echo Full Name: $NAME
+	echo Home Directory: $HOME
+	echo Default shell: $DEFAULT 
+		 
+exit 1
+done
+ fi
+
+
+loge_name=$(grep $1 prj2_passwd | cut -d: -f1)
+	if [ "$1" == "$loge_name" ]
+	then 
+		NAME=$(grep $1 prj2_passwd | cut -d: -f5 | tr '_' ' ')
+		HOME=$(grep $1 prj2_passwd | cut -d: -f6)
+		DEFAULT=$(grep $1 prj2_passwd | cut -d: -f7)
+		
+		echo Login Name: $1
+		echo Full Name: $NAME
+		echo Home Directory:$HOME
+		echo Default shell: $DEFAULT 
+		exit 0 
+	else 
+		echo [ $1 ] Login Name  this command is not found 
+		exit 2
+		fi 
+
